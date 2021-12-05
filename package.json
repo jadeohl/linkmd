@@ -1,0 +1,21 @@
+{
+  "name": "linkmd",
+  "version": "1.0.0",
+  "description": "Browser extension to create a markdown link of the current page with quoted text.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jadeohl/linkmd.git"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jasmine": "^3.10.0",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
