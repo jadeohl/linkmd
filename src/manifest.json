@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "LinkMD",
+	"name": "LinkMd",
 	"description": "Create a markdown link of the current page with quoted text.",
 	"version": "1.0",
 	"action": {
@@ -19,5 +19,13 @@
 		"activeTab",
 		"scripting",
 		"clipboardWrite"
-	]
+	],
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Alt+Shift+C"
+			},
+			"description": "Copy quote link to clipboard"
+		}
+	}
 }
