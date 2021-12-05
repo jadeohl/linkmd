@@ -7,8 +7,28 @@
 	<title></title>
 </head>
 
+<style>
+	div.result {
+		white-space: nowrap;
+		padding: 0.5em;
+		display: none;
+	}
+
+	div.ok {
+		color: black;
+		background-color: white;
+	}
+
+	div.error {
+		color: white;
+		background-color: red;
+		font-weight: bold;
+	}
+</style>
+
 <body>
-	<div>Copied to clipboard!</div>>
+	<div class="result ok" id="result-ok">Copied to clipboard</div>
+	<div class="result error" id="result-error">Failed to copy</div>
 </body>
 
 </html>

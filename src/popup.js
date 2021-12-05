@@ -1,6 +1,7 @@
 import ToMarkdown from './ToMarkdown.js';
-
 const md = new ToMarkdown();
+
+const closeAfterSeconds = 3;
 
 let activeTab = {
 	title: '',
@@ -9,23 +10,33 @@ let activeTab = {
 }
 
 function getSelected() {
+	// This function is passed to the active tab so window means that tab, not this popup
 	return window.getSelection().toString();
 }
 
 async function useSelected(results) {
 	activeTab.selectedText = results[0].result;
 
-	let output = md.quoteLink(activeTab.selectedText, activeTab.title, activeTab.url);
+	let output = '';
+	if (activeTab.selectedText === '' || activeTab.selectedText === undefined || activeTab.selectedText === null) {
+		output = md.link(activeTab.title, activeTab.url);
+	} else {
+		output = md.quoteLink(activeTab.selectedText, activeTab.title, activeTab.url);
+	}
 
 	try {
 		await navigator.clipboard.writeText(output);
-		console.log('Copied to clipboard');
+
+		showResult('result-ok');
+		hidePopup();
+
 	} catch (err) {
-		console.error('Failed to copy to clipboard', err)
+		showResult('result-error');
+		console.error('Failed to copy to clipboard', err);
 	}
 }
 
-async function getQuoteLinkForActiveTab() {
+async function main() {
 	const queryOptions = { active: true, currentWindow: true };
 	let [tab] = await chrome.tabs.query(queryOptions);
 	activeTab.title = tab.title;
@@ -41,11 +52,22 @@ async function getQuoteLinkForActiveTab() {
 }
 
 window.onload = function () {
-	getQuoteLinkForActiveTab();
+	main();
 }
 
 /*
-setTimeout(function () {
-	window.close();
-}, 5000);
-*/
+
+ ----------------- Visual
+
+ */
+function showResult(id) {
+	document.getElementById(id).style.display = 'block';
+}
+
+function hidePopup() {
+	if (closeAfterSeconds > 0) {
+		setTimeout(function () {
+			window.close();
+		}, closeAfterSeconds * 1000);
+	}
+}
