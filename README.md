@@ -19,3 +19,6 @@ I am testing this extension and haven't published this to an extension store yet
 1. Build with webpack to create a ```dist``` folder.
 2. From Chrome or Edge enable developer mode and load the unpacked extension from that folder.
 
+## Future
+- Options to set markdown format.
+
