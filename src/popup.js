@@ -42,6 +42,12 @@ async function main() {
 	activeTab.title = tab.title;
 	activeTab.url = tab.url;
 
+	if (tab.url.substr(0, 4) !== 'http') {
+		showResult('result-error');
+		console.error('http and https only');
+		return;
+	}
+
 	await chrome.scripting.executeScript(
 		{
 			target: { tabId: tab.id },
