@@ -16,7 +16,7 @@
 	},
 	"permissions": [
 		"activeTab",
-		"tabs",
-		"scripting"
+		"scripting",
+		"clipboardWrite"
 	]
 }

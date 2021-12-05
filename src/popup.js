@@ -1,8 +1,8 @@
 import ToMarkdown from './ToMarkdown.js';
 
-let md = new ToMarkdown();
+const md = new ToMarkdown();
 
-let info = {
+let activeTab = {
 	title: '',
 	url: '',
 	selectedText: ''
@@ -12,18 +12,24 @@ function getSelected() {
 	return window.getSelection().toString();
 }
 
-function useSelected(results) {
-	info.selectedText = results[0].result;
-	console.log(info.title);
-	console.log(info.url);
-	console.log(info.selectedText);
+async function useSelected(results) {
+	activeTab.selectedText = results[0].result;
+
+	let output = md.quoteLink(activeTab.selectedText, activeTab.title, activeTab.url);
+
+	try {
+		await navigator.clipboard.writeText(output);
+		console.log('Copied to clipboard');
+	} catch (err) {
+		console.error('Failed to copy to clipboard', err)
+	}
 }
 
-async function getCurrentTabInfo() {
-	let queryOptions = { active: true, currentWindow: true };
+async function getQuoteLinkForActiveTab() {
+	const queryOptions = { active: true, currentWindow: true };
 	let [tab] = await chrome.tabs.query(queryOptions);
-	info.title = tab.title;
-	info.url = tab.url;
+	activeTab.title = tab.title;
+	activeTab.url = tab.url;
 
 	await chrome.scripting.executeScript(
 		{
@@ -35,7 +41,7 @@ async function getCurrentTabInfo() {
 }
 
 window.onload = function () {
-	getCurrentTabInfo();
+	getQuoteLinkForActiveTab();
 }
 
 /*
