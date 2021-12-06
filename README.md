@@ -1,6 +1,6 @@
 <img src="src/icons/icon-128.png" width="64"/>
 
-# linkMd
+# Link-Md
 Chrome browser extension to create a markdown link of the current page with optional quote from selected text.
 
 <img src="resources/banner1.png" width="900"/>
