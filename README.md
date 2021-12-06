@@ -32,3 +32,11 @@ Beta. I am testing this extension and haven't published this to an extension sto
 ## Future
 - Option to set markdown format.
 
+## Graphics
+- Icon is based [on one by](https://www.veryicon.com/icons/miscellaneous/unionpay-digital-marketing/copy-link-face.html) Cady Weibo.
+- Colors are #012a1c #67c7be
+
+
+cady weibo
+ 
+
