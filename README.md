@@ -15,10 +15,20 @@ I built this browser extension for my own use of the [Logseq](https://logseq.com
 - No data is collected and no calls are made to any websites.
 
 ## Status
-I am testing this extension and haven't published this to an extension store yet. You can build it yourself if you would like to try it.
-1. Build with webpack to create a ```dist``` folder.
-2. From Chrome or Edge enable developer mode and load the unpacked extension from that folder.
+Beta. I am testing this extension and haven't published this to an extension store yet. You can build it yourself if you would like to try it.
+
+### Install a Release
+1. Download the latest release .zip and expand it somewhere on your machine.
+2. Under you browser extension management enable 'Developer mode'.
+3. 'Load upacked' and select the release folder
+
+### Build Your Own
+1. Clone this repo.
+2. Install NPM packages.
+3. Run ```npx``` then ```webpack```.
+4. A ```dist``` folder will be created.
+5. Follow the 'Install a Release' instructions above using this dist folder.
 
 ## Future
-- Options to set markdown format.
+- Option to set markdown format.
 
