@@ -16,9 +16,11 @@ I built this browser extension for my own use of the [Logseq](https://logseq.com
 - No data is collected and no calls are made to any websites.
 
 ## Install
-[Chrome web store link](https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod)
 
-### Install a Release
+### From Web Store
+<a href="https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod"><img src="resources/chrome-store.png" width="248"/></a>
+
+### As Developer With Release
 1. Download the latest [release](https://github.com/jadeohl/linkmd/releases) .zip and expand it somewhere on your machine.
 2. Under you browser extension management enable 'Developer mode'.
 3. 'Load upacked' and select the release folder
@@ -28,7 +30,7 @@ I built this browser extension for my own use of the [Logseq](https://logseq.com
 2. Install NPM packages.
 3. Run ```npx``` then ```webpack```.
 4. A ```dist``` folder will be created.
-5. Follow the 'Install a Release' instructions above using this dist folder.
+5. Follow the 'As Developer With Release' instructions above using this dist folder.
 
 ## Future
 - Option to set markdown format.
