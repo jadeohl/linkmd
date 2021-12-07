@@ -15,8 +15,7 @@ module.exports = {
 				{ from: './src/manifest.json' },
 				{ from: './src/popup.html' },
 				{ from: './src/icons/icon-64.png' },
-				{ from: './src/icons/icon-128.png' },
-				{ from: './src/icons/icon-512.png' },
+				{ from: './src/icons/icon-128.png' }
 			],
 		}),
 	],

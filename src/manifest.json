@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "LinkMd",
+	"name": "Link-Md",
 	"description": "Create a markdown link of the current page with quoted text.",
-	"version": "0.1",
+	"version": "1.0",
 	"action": {
 		"default_popup": "popup.html",
 		"default_icon": {
@@ -12,8 +12,7 @@
 	},
 	"icons": {
 		"64": "icon-64.png",
-		"128": "icon-128.png",
-		"512": "icon-512.png"
+		"128": "icon-128.png"
 	},
 	"permissions": [
 		"activeTab",
