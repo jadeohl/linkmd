@@ -15,8 +15,8 @@ I built this browser extension for my own use of the [Logseq](https://logseq.com
 - No 3rd party code is included in the plugin itself, referenced packages are only for testing and building.
 - No data is collected and no calls are made to any websites.
 
-## Status
-Beta. I am testing this extension and haven't published this to an extension store yet. You can build it yourself if you would like to try it.
+## Install
+[Chrome web store link](https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod)
 
 ### Install a Release
 1. Download the latest [release](https://github.com/jadeohl/linkmd/releases) .zip and expand it somewhere on your machine.
