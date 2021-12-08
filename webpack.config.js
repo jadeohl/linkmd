@@ -44,6 +44,10 @@ module.exports = [
 					{ from: './src/icons/icon-128.png' }
 				],
 			}),
+			new ZipPlugin({
+				path: '../',
+				filename: 'linkmd-mozilla.zip'
+			})
 		],
 		output: {
 			filename: '[name].js', path: path.resolve(__dirname, 'dist/mozilla')
