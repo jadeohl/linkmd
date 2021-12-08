@@ -5,36 +5,36 @@
 	<meta charset="UTF-8" />
 	<script src="popup.js"></script>
 	<title></title>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		div.result {
+			white-space: nowrap;
+			padding: 0.5em;
+			display: none;
+			color: white;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		div.ok {
+			background-color: #012a1c;
+		}
+
+		div.error {
+			background-color: red;
+		}
+	</style>
 </head>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.result {
-		white-space: nowrap;
-		padding: 0.5em;
-		display: none;
-		color: white;
-		font-weight: bold;
-		margin: 0;
-	}
-
-	div.ok {
-		background-color: #012a1c;
-	}
-
-	div.error {
-		background-color: red;
-	}
-</style>
 
 <body>
 	<div class="result ok" id="result-ok">Copied to clipboard</div>
-	<div class="result error" id="result-error">Failed to copy</div>
+	<div class="result error" id="error-copy">Failed to copy</div>
+	<div class="result error" id="error-denied">Not allowed</div>
 </body>
 
 </html>
