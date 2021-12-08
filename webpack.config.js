@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+var ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = [
 	{
@@ -19,6 +20,10 @@ module.exports = [
 					{ from: './src/icons/icon-128.png' }
 				],
 			}),
+			new ZipPlugin({
+				path: '../',
+				filename: 'linkmd-chrome.zip'
+			})
 		],
 		output: {
 			filename: '[name].js', path: path.resolve(__dirname, 'dist/chrome')
