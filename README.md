@@ -1,4 +1,4 @@
-<img src="src/icons/icon-128.png" width="64"/>
+<img src="src/icons/icon-128.png" width="64"/> 
 
 # Link-Md
 Browser extension to create a markdown link of the current page with optional quote from selected text.
@@ -6,6 +6,8 @@ Browser extension to create a markdown link of the current page with optional qu
 <img src="resources/banner1.png" width="900"/>
 
 I built this browser extension for my own use of the [Logseq](https://logseq.com/), a note keeping application that uses [Markdown](https://daringfireball.net/projects/markdown/). This extension gives me a markdown link of the current tab with selected text included.
+
+<a href="https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod" title="Chrome Extension"><img src="resources/chrome-store.png" width="248"/></a>
 
 ## Features
 - Tested with Chrome, Edge, and Vivaldi. Should work in any modern Chromium browser.
@@ -19,9 +21,9 @@ I built this browser extension for my own use of the [Logseq](https://logseq.com
 ## Install
 
 ### From Web Store
-<a href="https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod" title="Chrome Extension"><img src="resources/chrome-store.png" width="248"/></a>
+<a href="https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod">Chrome Web Store</a>
 
-<a href="https://addons.mozilla.org/en-US/firefox/addon/link-md/">Firefox Browser Add-On</a> (pending approval)
+<a href="https://addons.mozilla.org/en-US/firefox/addon/link-md/">Firefox Browser Add-On</a>
 
 ### As Developer With Release
 1. Download the latest [release](https://github.com/jadeohl/linkmd/releases) .zip for your browser family (Chrome includes Edge, or Mozilla includes Firefox) and expand it somewhere on your machine.
