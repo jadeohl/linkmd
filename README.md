@@ -5,12 +5,12 @@ Browser extension to create a markdown link of the current page with optional qu
 
 <img src="resources/banner1.png" width="900"/>
 
-I built this browser extension for my own use of the [Logseq](https://logseq.com/), a note keeping application that uses [Markdown](https://daringfireball.net/projects/markdown/). This extension gives me a markdown link of the current tab with selected text included.
+I built this browser extension for my own use of [Logseq](https://logseq.com/) and [Obsidian](https://obsidian.md/), note keeping applications that use [Markdown](https://daringfireball.net/projects/markdown/). This extension gives me a markdown link of the current tab with selected text included.
 
 <a href="https://chrome.google.com/webstore/detail/link-md/nfjkoojhgklbbnlonpdplbdjkgoemgod" title="Chrome Extension"><img src="resources/chrome-store.png" width="248"/></a>
 
 ## Features
-- Tested with Chrome, Edge, and Vivaldi. Should work in any modern Chromium browser.
+- Tested with Chrome, Edge, Brave, Opera, and Vivaldi. Should work in any modern Chromium browser.
 - Tested with Firefox.
 - Click the button or use the hotkey (default Alt + Shift + C) to copy the markdown to the clipboard. Paste the result into your destination.
 - Selected text is put in italics followed by a link to the page. If no text is selected then just the link is created.
