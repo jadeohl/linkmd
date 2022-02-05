@@ -47,6 +47,7 @@ I built this browser extension for my own use of [Logseq](https://logseq.com/) a
 
 ## Future
 - Option to set markdown format.
+- Option (likely default) to strip [tracking parameters](https://github.com/newhouse/url-tracking-stripper/blob/master/assets/js/trackers.js)
 
 ## Graphics
 - Icon is based [on one by](https://www.veryicon.com/icons/miscellaneous/unionpay-digital-marketing/copy-link-face.html) Cady Weibo.
