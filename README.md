@@ -26,7 +26,7 @@ I built this browser extension for my own use of [Logseq](https://logseq.com/) a
 <a href="https://addons.mozilla.org/en-US/firefox/addon/link-md/">Firefox Browser Add-On</a>
 
 ### As Developer With Release
-1. Download the latest [release](https://github.com/jadeohl/linkmd/releases) .zip for your browser family (Chrome includes Edge, or Mozilla includes Firefox) and expand it somewhere on your machine.
+1. Download the latest [release](https://github.com/jadeohl/linkmd/releases) .zip for your browser family (Chrome includes Edge, or Mozilla includes Firefox) and expand it.
 2. Follow the steps for manually loading extensions in your browser. Here they are for Chrome and Firefox. You should be able to search the steps for any browser or to get the following steps with screenshots: 
   - Chrome
      -  Go to "Manage Extensions"
@@ -41,9 +41,12 @@ I built this browser extension for my own use of [Logseq](https://logseq.com/) a
 ### Build Your Own
 1. Clone this repo.
 2. Install NPM packages.
-3. Run ```npx``` then ```webpack```.
-4. A ```dist``` folder will be created with a subfolder for each browser.
-5. Follow the _As Developer With Release_ instructions above using this dist folder.
+3. Run ```jasmine``` to execute the unit tests
+4. Run ```npx``` then ```webpack``` to build
+5. A ```dist``` folder will be created with a subfolder for each browser.
+6. Follow the _As Developer With Release_ instructions above using this dist folder.
+
+
 
 ## Future
 - Option to set markdown format.
