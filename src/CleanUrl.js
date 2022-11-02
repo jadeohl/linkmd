@@ -26,6 +26,8 @@ CleanUrl.prototype.removeParameters = function () {
 
 CleanUrl.prototype.clean = function (url) {
 
+    if (typeof url !== 'string') return url;
+
     this.url = url;
 
     this.removeParameters();

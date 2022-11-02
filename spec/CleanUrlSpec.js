@@ -18,15 +18,21 @@ describe('CleanUrl', function () {
         })
     });
 
-    it('should do nothing to other strings', function () {
-        expect(cu.clean('abc')).toEqual('abc');
-    });
-
     it('should remove trackers', function () {
         expect(cu.clean(
             'https://www.bloomberg.com/news/articles/2022-08-12/billionaire-turns-from-finance-to-living-out-his-inner-ted-lasso?utm_medium=social&utm_source=twitter&cmpid%3D=socialflow-twitter-bloomberguk&utm_content=bloomberguk&utm_campaign=socialflow-organic'
         )).toEqual(
             'https://www.bloomberg.com/news/articles/2022-08-12/billionaire-turns-from-finance-to-living-out-his-inner-ted-lasso'
         );
+    });
+
+    it('should do nothing to other strings', function () {
+        expect(cu.clean('abc')).toEqual('abc');
+        expect(cu.clean('')).toEqual('');
+    });
+
+    it('should not fail on other types', function () {
+        expect(cu.clean(true)).toEqual(true);
+        expect(cu.clean(5)).toEqual(5);
     });
 });
