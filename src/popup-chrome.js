@@ -14,7 +14,7 @@ function getSelected() {
 	return window.getSelection().toString();
 }
 
-function legacyCopyTextToClipboard(text) {
+function copyTextToClipboard(text) {
 	var textArea = document.createElement("textarea");
 	textArea.value = text;
 
@@ -46,17 +46,12 @@ async function useSelected(results) {
 		output = md.quoteLink(activeTab.selectedText, activeTab.title, activeTab.url);
 	}
 
-	try {
-		await navigator.clipboard.writeText(output);
-		pop.success();
-	} catch (err) {
-		console.log('Clipboard error (will try legacy)', err);
-		legacyCopyTextToClipboard(output);
-	}
+	copyTextToClipboard(output);
 }
 
 async function main() {
 	const queryOptions = { active: true, currentWindow: true };
+
 	let [tab] = await chrome.tabs.query(queryOptions);
 	activeTab.title = tab.title;
 	activeTab.url = tab.url;
@@ -66,7 +61,6 @@ async function main() {
 		console.error('http and https only');
 		return;
 	}
-
 	await chrome.scripting.executeScript(
 		{
 			target: { tabId: tab.id },
