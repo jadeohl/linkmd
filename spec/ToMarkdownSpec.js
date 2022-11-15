@@ -21,7 +21,8 @@ describe('ToMarkdown', function () {
 	it('should make links', function () {
 		expect(md.link('Google', 'http://google.com')).toEqual('[Google](http://google.com)');
 		expect(md.link('Google [3]', 'http://google.com')).toEqual('[Google \\[3\\]](http://google.com)');
-		expect(md.link('Google', 'http://google.com/(a)')).toEqual('[Google](http://google.com/\\(a\\))');
+		expect(md.link('Google', 'http://google.com/(a)')).toEqual('[Google](http://google.com/(a))');
+		expect(md.link('Google [3]', 'http://google.com/test_page')).toEqual('[Google \\[3\\]](http://google.com/test_page)');
 	});
 
 	it('should make quotes', function () {

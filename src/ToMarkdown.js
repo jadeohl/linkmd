@@ -21,7 +21,7 @@ ToMarkdown.prototype.collapseString = function (str) {
 }
 
 ToMarkdown.prototype.link = function (text, url) {
-	return '[' + this.escapeString(text) + '](' + this.escapeString(url) + ')';
+	return '[' + this.escapeString(text) + '](' + url + ')';
 }
 
 ToMarkdown.prototype.quote = function (text) {
