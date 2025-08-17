@@ -15,6 +15,7 @@ I built this browser extension for my own use of [Logseq](https://logseq.com/) a
 - Click the button or use the hotkey (default Alt + Shift + C) to copy the markdown to the clipboard. Paste the result into your destination.
 - Selected text is put in italics followed by a link to the page. If no text is selected then just the link is created.
 - Uses minimal code and permissions with no background process. Activating the extension inserts a 1 line function into the active tab to get any selected text.
+- Automatically removes common tracking parameters from URLs (utm_, gclid, fbclid, etc.) using a conservative list of well-established tracking parameters from major platforms.
 - No 3rd party code is included in the plugin itself, referenced packages are only for testing and building.
 - No data is collected and no calls are made to any websites.
 
@@ -50,7 +51,6 @@ I built this browser extension for my own use of [Logseq](https://logseq.com/) a
 
 ## Future
 - Option to set markdown format.
-- Option (likely default) to strip [tracking parameters](https://github.com/newhouse/url-tracking-stripper/blob/master/assets/js/trackers.js)
 
 ## Graphics
 - Icon is based [on one by](https://www.veryicon.com/icons/miscellaneous/unionpay-digital-marketing/copy-link-face.html) Cady Weibo.

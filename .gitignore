@@ -16,3 +16,6 @@
 
 # secrets
 secrets.*.js
+
+# Claude Code personal configuration
+CLAUDE.md

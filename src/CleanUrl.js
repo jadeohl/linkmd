@@ -4,25 +4,29 @@ function CleanUrl() {
 
 CleanUrl.prototype.removeParameters = function () {
     // Remove any parameters that start with these
-    const parameterPrefixRemoveList = ['utm_', 'cmpid'];
+    const parameterPrefixRemoveList = require('./trackingParameters');
 
-    var urlParts = this.url.split('?');
+    // Split URL and fragment
+    const hashParts = this.url.split('#');
+    const fragment = hashParts.length > 1 ? '#' + hashParts[1] : '';
+    
+    const urlParts = hashParts[0].split('?');
     if (urlParts.length < 2) return;
 
-    var parameters = urlParts[1].split(/[&;]/g);
-    for (var i = parameters.length; i-- > 0;) {
-        var parameterToEvaluate = parameters[i];
-        var prefixToRemove;
-        for (var j = 0; prefixToRemove = parameterPrefixRemoveList[j]; j++) {
-            if (parameterToEvaluate.toLowerCase().lastIndexOf(encodeURIComponent(prefixToRemove), 0) !== -1) {
+    const parameters = urlParts[1].split(/[&;]/g).filter(param => param.length > 0);
+    for (let i = parameters.length; i-- > 0;) {
+        const parameterToEvaluate = parameters[i];
+        let prefixToRemove;
+        for (let j = 0; prefixToRemove = parameterPrefixRemoveList[j]; j++) {
+            if (parameterToEvaluate.lastIndexOf(encodeURIComponent(prefixToRemove), 0) !== -1) {
                 parameters.splice(i, 1);
                 break;
             }
         }
     }
 
-    this.url = urlParts[0] + (parameters.length > 0 ? '?' + pars.join('&') : '');
-}
+    this.url = urlParts[0] + (parameters.length > 0 ? '?' + parameters.join('&') : '') + fragment;
+};
 
 CleanUrl.prototype.clean = function (url) {
 
@@ -34,10 +38,10 @@ CleanUrl.prototype.clean = function (url) {
 
     this.url = this.url
         .replace(/&$/, '')  // removes & if last character
-        .replace(/^\?$/, '')  // removes ? if only remaining character
-        ;
+        .replace(/\?$/, '')  // removes ? if last character
+    ;
 
     return this.url;
-}
+};
 
 module.exports = CleanUrl;
