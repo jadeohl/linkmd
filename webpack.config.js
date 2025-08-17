@@ -30,9 +30,13 @@ module.exports = [
 		}
 	},
 	{
-		mode: 'production',
+		mode: 'development',
+		devtool: false,
 		entry: {
 			popup: './src/popup-mozilla.js'
+		},
+		optimization: {
+			minimize: false
 		},
 		plugins: [
 			new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
