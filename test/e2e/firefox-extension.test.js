@@ -22,7 +22,7 @@ describe('Firefox Extension E2E Tests', () => {
         }
 
         browser = await firefox.launch({
-            headless: false, // Set to true for CI
+            headless: process.env.CI ? true : false, // Headless in CI, visible locally
             firefoxUserPrefs: {
                 // Disable various Firefox features for testing
                 'dom.webnotifications.enabled': false,

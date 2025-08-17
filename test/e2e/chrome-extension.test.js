@@ -22,7 +22,7 @@ describe('Chrome Extension E2E Tests', () => {
         }
 
         browser = await puppeteer.launch({
-            headless: false, // Set to 'new' for headless in CI
+            headless: process.env.CI ? 'new' : false, // Headless in CI, visible locally
             args: [
                 `--load-extension=${extensionPath}`,
                 `--disable-extensions-except=${extensionPath}`,
@@ -32,7 +32,13 @@ describe('Chrome Extension E2E Tests', () => {
                 '--disable-web-security',
                 `--user-data-dir=${profilePath}`,
                 '--disable-features=TranslateUI',
-                '--disable-ipc-flooding-protection'
+                '--disable-ipc-flooding-protection',
+                ...(process.env.CI ? [
+                    '--disable-gpu',
+                    '--disable-background-timer-throttling',
+                    '--disable-backgrounding-occluded-windows',
+                    '--disable-renderer-backgrounding'
+                ] : [])
             ]
         });
 
