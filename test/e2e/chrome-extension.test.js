@@ -93,9 +93,8 @@ describe('Chrome Extension E2E Tests', () => {
         // Wait for page to load
         await page.waitForSelector('h1');
         
-        // Get the current URL and title for verification
+        // Get the current title for verification
         const pageTitle = await page.title();
-        const pageUrl = page.url();
         
         expect(pageTitle).toBe('Test Page Title');
         

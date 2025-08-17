@@ -25,7 +25,13 @@ module.exports = [
                 it: "readonly",
                 expect: "readonly",
                 beforeEach: "readonly",
-                afterEach: "readonly"
+                afterEach: "readonly",
+                
+                // Jest test globals (for E2E tests)
+                test: "readonly",
+                beforeAll: "readonly",
+                afterAll: "readonly",
+                jest: "readonly"
             }
         },
         rules: {
@@ -45,6 +51,48 @@ module.exports = [
             "no-var": "error",
             "prefer-const": "error",
             "no-unused-expressions": "error"
+        }
+    },
+    {
+        // Special configuration for E2E test files
+        files: ["test/e2e/**/*.js"],
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: "module",
+            globals: {
+                // Node.js globals
+                require: "readonly",
+                module: "readonly",
+                exports: "readonly",
+                __dirname: "readonly",
+                process: "readonly",
+                
+                // Jest globals
+                describe: "readonly",
+                test: "readonly",
+                expect: "readonly",
+                beforeAll: "readonly",
+                afterAll: "readonly",
+                beforeEach: "readonly",
+                afterEach: "readonly",
+                jest: "readonly"
+            }
+        },
+        rules: {
+            // Relax some rules for test files
+            "no-console": "off", // Allow console in tests for debugging
+            "no-unused-vars": "warn", // Warn instead of error for test variables
+            
+            // Code style
+            "indent": ["error", 4],
+            "quotes": ["error", "single"],
+            "semi": ["error", "always"],
+            "comma-dangle": ["error", "never"],
+            
+            // Best practices
+            "eqeqeq": "error",
+            "no-var": "error",
+            "prefer-const": "error"
         }
     }
 ];
