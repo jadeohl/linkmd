@@ -17,7 +17,8 @@ CleanUrl.prototype.removeParameters = function () {
     for (let i = parameters.length; i-- > 0;) {
         const parameterToEvaluate = parameters[i];
         let prefixToRemove;
-        for (let j = 0; prefixToRemove = parameterPrefixRemoveList[j]; j++) {
+        for (let j = 0; j < parameterPrefixRemoveList.length; j++) {
+            prefixToRemove = parameterPrefixRemoveList[j];
             if (parameterToEvaluate.lastIndexOf(encodeURIComponent(prefixToRemove), 0) !== -1) {
                 parameters.splice(i, 1);
                 break;

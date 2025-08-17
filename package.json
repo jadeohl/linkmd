@@ -22,6 +22,9 @@
     "logseq",
     "obsidian"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "test": "jasmine",
     "test:e2e": "jest --config=test/e2e/jest.config.js",
@@ -37,7 +40,7 @@
     "@jest/test-sequencer": "^30.0.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
-    "eslint": "^9.33.0",
+    "eslint": "^8.57.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^9.1.7",
     "jasmine": "^3.99.0",
