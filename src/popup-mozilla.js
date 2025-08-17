@@ -1,5 +1,5 @@
 import ToMarkdown from './ToMarkdown.js';
-import Popup from './Popup.js';
+import Popup from './popup.js';
 const md = new ToMarkdown();
 const pop = new Popup();
 
