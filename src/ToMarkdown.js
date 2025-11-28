@@ -3,7 +3,7 @@ function ToMarkdown() {
 }
 
 ToMarkdown.prototype.escapeString = function (str) {
-    const escapeList = ['[', ']', '(', ')', '_'];
+    const escapeList = ['[', ']', '(', ')', '_', '<', '>'];
 
     escapeList.forEach(strToReplace => {
         str = str.replaceAll(strToReplace, '\\' + strToReplace);
@@ -21,7 +21,9 @@ ToMarkdown.prototype.collapseString = function (str) {
 };
 
 ToMarkdown.prototype.link = function (text, url) {
-    return '[' + this.escapeString(text) + '](' + url + ')';
+    // Escape parentheses in URL to prevent breaking markdown syntax
+    const safeUrl = url.replaceAll('(', '\\(').replaceAll(')', '\\)');
+    return '[' + this.escapeString(text) + '](' + safeUrl + ')';
 };
 
 ToMarkdown.prototype.quote = function (text) {

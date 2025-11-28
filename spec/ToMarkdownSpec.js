@@ -10,6 +10,7 @@ describe('ToMarkdown', function () {
         expect(md.escapeString('abc')).toEqual('abc');
         expect(md.escapeString('a(b(c')).toEqual('a\\(b\\(c');
         expect(md.escapeString('_a')).toEqual('\\_a');
+        expect(md.escapeString('<script>')).toEqual('\\<script\\>');
     });
 
     it('should collapse', function () {
@@ -21,8 +22,12 @@ describe('ToMarkdown', function () {
     it('should make links', function () {
         expect(md.link('Google', 'http://google.com')).toEqual('[Google](http://google.com)');
         expect(md.link('Google [3]', 'http://google.com')).toEqual('[Google \\[3\\]](http://google.com)');
-        expect(md.link('Google', 'http://google.com/(a)')).toEqual('[Google](http://google.com/(a))');
+        // Updated expectation for URL escaping
+        expect(md.link('Google', 'http://google.com/(a)')).toEqual('[Google](http://google.com/\\(a\\))');
         expect(md.link('Google [3]', 'http://google.com/test_page')).toEqual('[Google \\[3\\]](http://google.com/test_page)');
+
+        // New security test case
+        expect(md.link('Title <script>', 'http://example.com/foo)bar')).toEqual('[Title \\<script\\>](http://example.com/foo\\)bar)');
     });
 
     it('should make quotes', function () {
